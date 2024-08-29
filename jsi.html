@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JustStreamIt : classement des meilleurs films</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="header.css"/>
+    <link rel="stylesheet" href="bestfilm.css"/>
+    <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="genres.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="modal.js" defer></script>
+    <script src="bestfilm.js" defer></script>
+    <script src="bestcategoryfilm.js" defer></script>
+    <script src="genres.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <a href="jsi.html" class="logo-link">
+            <img src="jsi_logo.png" alt="Logo du site JustStreamIt" title="logo JustStreamIt" class="logo-image"/>
+            <span class="header-text">Vidéos à la demande</span>
+        </a>
+    </header>
+
+    <main>
+        <h2>Meilleur film</h2>
+        <div class="film-container-best">
+            <div class="film-image">
+                <a href="Kaamelott.webp" target="_blank">
+                    <img src="Kaamelott.webp" alt="Image de couverture de Kaamelott" title="logo couverture Kaamelott"/>
+                </a>
+            </div>
+            <div class="film-description">
+                <h1>Kaamelott</h1>
+                <p id="bestfilm-description">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le tyrannique <span class="ma_classe">Lancelot-du-Lac</span> et ses mercenaires saxons font régner la terreur sur le royaume de Logres. Les Dieux, insultés par cette cruelle dictature, provoquent le retour d'Arthur Pendragon et l'avènement de la résistance. Arthur parviendra-t-il à fédérer les clans rebelles, renverser son rival, reprendre Kaamelott et restaurer la paix sur l'île de Bretagne ?</p>
+                <a href="Kaamelott.json" class="bouton_details1">
+                    <span>Détails</span>
+                </a>
+            </div>
+        </div>
+
+        <br><br><br>
+        <h2>Films les mieux notés</h2>
+        <div id="best-movies" class="movies-container"></div>
+        <button class="toggle-button" data-target="best-movies">Voir plus</button>
+
+        <br><br><br>
+        <h2>Sci-Fi</h2>
+        <div id="Sci-Fi-movies" class="movies-container"></div>
+        <button class="toggle-button" data-target="Sci-Fi-movies">Voir plus</button>
+
+        <br><br><br>
+        <h2>Mystery</h2>
+        <div id="mystery-movies" class="movies-container"></div>
+        <button class="toggle-button" data-target="mystery-movies">Voir plus</button>
+
+        <br><br><br>
+        <h2>Fantasy</h2>
+        <div id="fantasy-movies" class="movies-container"></div>
+        <button class="toggle-button" data-target="fantasy-movies">Voir plus</button>
+
+        <br><br><br>
+        <h2 id="selected-genre-title" style="display: none;"></h2>
+        <div id="selected-genre-movies" class="movies-container" style="display: none;"></div>
+        <button id="toggle-selected-genre" class="toggle-button" data-target="selected-genre-movies" style="display: none;">Voir plus</button>
+        
+        <br><br><br>
+        <h2 id="genre">
+            Autres :
+            <button class="accordion">
+                <span class="arrow">&#9660;</span> <!-- Flèche vers le bas -->
+            </button>
+        </h2>
+
+        <div class="panel">
+            <ul id="genre-list">
+                <!-- Les genres seront ajoutés ici par JavaScript -->
+            </ul>
+        </div>
+        
+        </div>
+    </main>
+
+    <div id="film-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h2 id="modal-title"></h2>
+            </div>
+            <div class="modal-body">
+                <img id="modal-image" src="" alt="Image du film"/>
+                <p>
+                    <strong><span id="modal-release-date"></span>,&nbsp;
+                    <span id="modal-genre"></span></strong>
+                </p>
+                <p>
+                    <strong><span id="modal-duration"></span> minutes,
+                    <span id="modal-country" class="modal-country"></span></strong>
+                </p>
+                <p><strong>Score IMDB : <span id="modal-imdb-score"></span>/10</strong></p>
+                <p><strong>Recettes au box-office : <span id="modal-box-office"></span></strong></p>
+                <p id="modal-director">
+                    <strong>Réalisé par :</strong>
+                    <span id="modal-director-text"></span>
+                </p>
+                <p id="modal-summary">
+                    <strong>Résumé :&nbsp;</strong>
+                    <span id="modal-summary-text"></span>
+                </p>
+                <img id="modal-image-bis" src="" alt="Image du film"/>
+                <p><strong>Avec :<br></strong> <span id="modal-actors"></span></p>
+            </div>
+            <div class="modal-footer">
+                <button class="close-modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
